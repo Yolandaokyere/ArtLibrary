@@ -1,0 +1,90 @@
+/* Lost the first version of the css file. Didn't saved it on GitHub. */
+body {
+    height: 100vh;
+} 
+
+main {
+    width:100%;
+    height:100%;
+
+    display:grid;
+    PLace-items:center;     
+
+    background-color: red;
+}
+
+/* alles is de section krijgt dezelfde stijl, mijn section = envelop*/
+
+.envelop {
+    width: 50vw;
+    aspect-ratio: 3/2;
+    background-color: azure;
+    position: relative;
+
+    transform-style:preserve-3d;
+}
+.flap {
+    width: 100%;
+    height: 50%;   
+    background-color: #800000;
+    position: absolute;
+    /* met position > absolute > gefixt dat de vormen allemaal op 1 positie komen te zitten */
+    clip-path: polygon(0 0, 100% 0%, 50% 100%, 0 0);
+    transform-origin: center top;
+    z-index: 11;
+    /* met transform-origin; center top wordt aangegeven dat het punt bij het openen van de brief moet draaien vanaf het toppunt, boven. */
+
+
+}
+.voorkant {
+    width: 100%;
+    height: 100%;
+    background-image: url(img/pinkVintage.jpg);
+    position: absolute;
+    z-index: 10;
+   
+}
+
+/* .foto {
+    width: 50%;
+    height: 50%;
+    /* Vormgeving met aspect ratio, 3/2 geeft de verhouding weer */
+    /* aspect-ratio:3/2 ; */
+    /* afbeelding importeren via src image is niet gelukt.  */
+    /* <img> src: "C:\Users\Yolan\OneDrive\Desktop\Vintage.jpg"; */
+
+
+.brief {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  position: absolute;
+  z-index: 5;
+  transition: 3s;
+  transition-delay: 1.3s;
+ 
+}
+
+.achterkant {
+    width: 100%;
+    height: 100%;
+    background-color: pink;
+    position: absolute;
+
+}
+
+.flap {
+    /* background-color: #800000; */
+    /* background-color: #800000; */
+    /* transform: perspective(30em) rotateX(.51turn); */
+    transform-origin: center top;
+    transition: 1s;
+}
+
+.envelop:hover .flap {
+    transform: rotateX(181deg);
+    background-color: #FA8072;
+}
+.envelop:hover .brief {
+    transform: translateY(-180%)
+}
