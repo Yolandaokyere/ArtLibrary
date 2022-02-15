@@ -16,7 +16,7 @@ main {
 /* alles is de section krijgt dezelfde stijl, mijn section = envelop*/
 
 .envelop {
-    width: 40vw;
+    width: 50vw;
     aspect-ratio: 3/2;
     background-color: azure;
     position: relative;
@@ -86,5 +86,5 @@ main {
     background-color: #FA8072;
 }
 .envelop:hover .brief {
-    transform: translateY(-40%)
+    transform: translateY(-180%)
 }
