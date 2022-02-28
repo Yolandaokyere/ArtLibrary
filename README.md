@@ -5,18 +5,14 @@ ArtLibrary is a single page web app. The user can enjoy National art and info of
 # 📝Course Description
 This course is a intro how to build a web application without frameworks or unnecesarry libraries, but with vanilla HTML, CSS & JavaScript. The course will give a better understanding of how API's, frameworks and libraries work.
 
-# API
+# 🔗API
 The data is retrieved from Rijksdata by the Rijksmuseum;https://data.rijksmuseum.nl/object-metadata/api/ . 
 The API gives acces to the collection with information about each object up to a total of 10,000. 
 
-# Features
-# Sources
+# 💡Features
 
-- [Visitekaartje](https://github.com/cmda-minor-web/web-app-from-scratch-2122/blob/main/course/week-1.md#1-visitekaartje): Ontwerp en maak met HTML, CSS en JS een visitekaartje.
-- [Teampagina](https://github.com/cmda-minor-web/web-app-from-scratch-2122/blob/main/course/week-1.md#2-teampagina): Ontwerp en maak met je team een teampagina waarin je de verschillende visitekaartjes toont.
-- [Single Page App](https://github.com/cmda-minor-web/web-app-from-scratch-2122/blob/master/course/week-2.md): Design and build a single page web app based on a User Story.
+# 📚Sources
 
----
 
 ## Program
 
