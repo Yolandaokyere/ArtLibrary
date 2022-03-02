@@ -1,5 +1,5 @@
-# 🖼️ArtLibrary:
-ArtLibrary is a single page web app. The user can enjoy National art and info of the Rijksmuseum collection.
+# 🖼️ArtGallery:
+ArtGallery is a single page web app. The user can enjoy National art and info of the Rijksmuseum collection.
 *example image incoming*
 
 # 📝Course Description
