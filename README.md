@@ -1,6 +1,8 @@
 # 🖼️ArtLibrary:
 ArtLibrary is a single page web app. The user can enjoy National art and info of the Rijksmuseum collection.
-*example image incoming*
+![2022-03-03 (63)](https://user-images.githubusercontent.com/97689634/156567932-6ce91251-a36a-4835-add8-34f2b412be20.png)
+
+
 
 # 📝Course Description
 This course is a intro how to build a web application without frameworks or unnecesarry libraries, but with vanilla HTML, CSS & JavaScript. The course will give a better understanding of how API's, frameworks and libraries work.
