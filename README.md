@@ -14,7 +14,8 @@ The API gives acces to the collection with information about each object up to a
 # 💡Features
 
 # 📚Sources
-
+https://developer.mozilla.org/en-US/docs/Web/API/Element/innerHTML
+https://attacomsian.com/blog/javascript-dom-remove-all-children-of-an-element (Remove child from element)
 
 ## Program
 
