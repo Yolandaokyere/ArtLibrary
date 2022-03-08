@@ -1,3 +1,12 @@
+:root {
+    --headerFontColor:rgb(197, 171, 197);
+    --headerBoxshadow: .5em .5em 3em rgb(218, 204, 144);
+    --headerColor:rgb(119 110 72);
+    --searchBorderline:solid 2px rgb(75, 69, 45);
+    --searchBackground:rgba(240, 235, 232, 0.904);
+    --searchHoverColor:rgb(200 90 90);
+}
+
 @font-face {
     font-family: bosch;
     src:url(fonts/Author-Regular.otf);
@@ -14,12 +23,18 @@
 }
 
 body {
-    background:rgb(206, 200, 190);
     background-image: url(images/kiwihug-y_2GC4EhOP4-unsplash.jpg);
 }
 
+h1 {
+    margin: 0 0 -6px;
+    display: flex;
+    font-family: histograph;
+    font-size: 35.8px;
+    color:var(--headerFontColor);
+}
+
 header {
-    /* sticky header */
     display: flex;
     position: fixed;
     font-family: histograph;
@@ -28,42 +43,33 @@ header {
     right: 0;
     z-index: 3;
     opacity: 90%;
-    box-shadow:  .5em .5em 3em rgb(218, 204, 144);
-    
+    box-shadow: var(--headerBoxshadow);
+    /* centering items in the header */
     justify-content: center;
     align-items: center;
-    padding: 10px 100px;
     box-sizing: border-box;
-    height: 70px;
-    background-color: rgb(119 110 72);
-    /* background-image: url(images/annie-spratt-xvU-X0GV9-o-unsplash.jpg); */
+    height: 90px;
+    background-color: var(--headerColor);
 }
-
-/* centering items in the header */
-* {
-    margin: 0;
-    padding:0;
-    box-sizing: border-box;
-}
-
 
 /* ol is in the container */
 .container {
     max-width: 1600px;
-    padding: 50px 20px;
+    padding: 20px 20px;
     margin: 0 auto;
 }
 
 /* art grid lay out */
 ol {
     max-width: 100%;
+    padding: 29px;
     border: 10px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     grid-gap: 15px;
 }
 
-/* help I want to remove the marker! */
+/* HELP I want to remove the marker! */
 li::marker {
   opacity: 0%;
 }
@@ -103,64 +109,84 @@ li img:hover {
     opacity: 100%;
 }
  
-/* :placeholder-shown {
-    top: 0;
-    left: 0;
-    right: 0;
-} */
-
+#form {
+    padding: 5em;
+}
 /* Searchbutton */
-#zoek-met-button {
+#searchBar {
 	display:flex;
 	align-items:center;
 }
-
-#zoek-met-button form {
-	flex-grow:1;
+/* search length */
+#searchBar form {
+	flex-grow:-1;
 	display:flex;
-	justify-content:flex-end;
+	justify-content:flex-start;
 }
-
-#zoek-met-button input {
-	padding:.25em 0;
+/* styling */
+#searchBar input {
+    display: inline-block;
+    position: relative;
+    font-size:.9em;
+	padding:.50em 0em;
 	margin:0;
-	font-size:.9em;
 	line-height:2em;
 	box-sizing:border-box;
 	outline:none;
 	-webkit-appearance: none;
 }
 
-#zoek-met-button input[type=search] {
-	border:solid 2px rgb(119 110 72);
-	background:white url(images/search\ icon.png) no-repeat .5em center / 1.5em;
-	width:2.5em;
-	border-radius:1.5em;
-	padding:.25em .5em .25em 2em;
+/* styling */
+#searchBar input[type=search] {
+	border:var(--searchBorderline);
+	background:var(--searchBackground) url(images/search\ icon.png) no-repeat .4em center / 2.1em;
+	width:5em;
+    border-radius: 1.5em 0 1.5em  0;
+    padding: 0 2.8em;
 	overflow:hidden;
-	transition:width 1s, border-radius .33s .67s;
+	transition:width 1s, border-radius.33s .67s;
+    cursor: pointer;
 }
 
-#zoek-met-button input[type=submit] {
+#searchBar input[type=submit] {
 	-webkit-appearance: none;
 	border:none;
 	background-color:rgb(99, 94, 74);
-	color:white;
-	width:0;
+	color:var(--searchBackground);
+	width:0em;
 	overflow:hidden;
 	border-radius:0 1.5em 1.5em 0;
 	transition:1s;
+    cursor: pointer;
 }
 
-#zoek-met-button input[type=search]:focus {
-	width:calc(100% - 5em);
+#searchBar input[type=search]:focus {
+	width:calc(100% - 3em);
 	border-radius:1.5em 0 0 1.5em;
 	transition:width 1s, border-radius .33s;
+    background-color:var(--searchBackground);
 }
 
-#zoek-met-button input[type=search]:focus + input[type=submit] {
-	width:5em;
+#searchBar input[type=search]:focus + input[type=submit] {
+	width:8.5em;
 }
+
+#searchBar input[type=search]:hover {
+    animation-name: searchHover;
+    animation-iteration-count: 1;
+    animation-duration: 1.5s;
+}
+
+@keyframes searchHover {
+    0% {
+        background-color: none;
+    }
+    100% {
+        background-color:var(--searchHoverColor);
+    }
+}
+
+
 
 
 

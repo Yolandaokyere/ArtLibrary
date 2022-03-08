@@ -1,66 +1,85 @@
 // 1. The variables [the endpoint] = Data
-const endpoint = 'https://www.rijksmuseum.nl/api/en/collection?key=GnjcnmeH&ps=100'; 
-
-
+const endpoint = 'https://www.rijksmuseum.nl/api/en/collection?key=GnjcnmeH&ps=100';
+const searchField = document.getElementById('searchField');
+const searchForm = document.querySelector('form');
+const searchAPI = 'https://www.rijksmuseum.nl/api/nl/collection?key=GnjcnmeH&ps=10&imgonly=true&q=';
+let theData;
 // 2. The user story [user krijgt kunst] Deze functie wordt aangeroepen in punt 3. 
-
 
 // 3.Functies [Data ophalen en loggen, kunst genereren in HTML] 
 
-    
+// DATA API
+// Function requesting data from API & response;
+fetch (endpoint)
+.then(function(response){
+    return response.json()
+})
 
-   // Function requesting data from API & response;
-   fetch (endpoint)
-    .then(function(response){
-        return response.json()
+// Function logging the response of requested data 
+.then(function(Data) {
+    theData = Data;
+    console.log(Data);
+   
+// Function rendering objects in HTML 
+    for (let i = 0; i <Data.artObjects.length; i++) {
+        const  kunstImg = Data.artObjects[i].webImage.url
+        const  kunstTitel = Data.artObjects[i].longTitle
+        const  titleShort = Data.artObjects[i].title
+        document.querySelector('ol').insertAdjacentHTML(`beforeend` ,`<li>
+            <h3 class="titleClass">${kunstTitel}</h3>
+            <h2 class="titleShort">${titleShort}</h2>
+            <img src="${kunstImg}">
+            </li>`
+        )  
+        console.log(Data.artObjects[i]);              
+    }                
+})
+     
+// Function requesting data from searchAPI link & return response; 
+fetch (searchAPI)
+.then(function(response){
+    return response.json()
+})
+
+
+// keyAdvent searchBar
+searchField.addEventListener('keyup', (e) => {
+    const searchString = e.target.value.toLowerCase(); // toLowerCase >> to search case sensitive objects
+
+    let newData = theData.artObjects.filter(element => {
+        let searchableStrings = `${element.title} ${element.principalOrFirstMaker}`
+
+        if(searchableStrings.toLowerCase().indexOf(searchString) !== -1) {
+            return true;
+        } else {
+            return false;
+        }
     })
-   
 
-    // Function logging the response of requested data 
-        .then(function(Data) {
-        console.log(Data);
-        // console.log(Data.artObjects[0].webImage.url)
-        
-    // Function rendering objects in HTML 
-                 for (let i = 0; i <Data.artObjects.length; i++) {
-                                    const  kunstImg = Data.artObjects[i].webImage.url
-                                    const  kunstTitel = Data.artObjects[i].longTitle
-                                    const  titleShort = Data.artObjects[i].title
-                                    document.querySelector('ol').insertAdjacentHTML(`beforeend` ,
-                                    `<li>
-                                    <h3 class="titleClass">${kunstTitel}</h3>
-                                    <h2 class="titleShort">${titleShort}</h2>
-                                    <img src="${kunstImg}">
-                                    </li>`
-                                    )  
-                                    console.log(Data.artObjects[i]);              
-                    }                
-                })
-                
-    // Function refference to gallery, popup, kunstimg
-    const gallery = document.getElementById('gallery');
-    const popup = document.getElementById('popup');
-    const selectedImage = document.getElementById('selectedImage');
-    const selectedIndex = null;
+    let parent = document.querySelector('ol');
 
-    window.addEventListener('scroll', function() {
-        var header = this.document.querySelector("header");
-        header.classList.toggle("sticky", window.scrollY > 0)
-    })
-   
-    // Function popup
+    while (parent.lastChild) {
+        parent.removeChild(parent.lastChild);
+    }
 
-    // var kunstImg = document.querySelector('Data.artObjects[i].webImage.url')
-    // console.log(kunstImg)
+    for (let i = 0; i <newData.length; i++) {
+        const  kunstImg = newData[i].webImage.url
+        const  kunstTitel = newData[i].longTitle
+        const  titleShort = newData[i].title
+        document.querySelector('ol').insertAdjacentHTML(`beforeend` ,`<li>
+            <h3 class="titleClass">${kunstTitel}</h3>
+            <h2 class="titleShort">${titleShort}</h2>
+            <img src="${kunstImg}">
+            </li>`
+        )  
+    }   
 
-    // gallery.appendChild(kunstImg);
+    console.log(newData)
+});
 
-    // image.addEventListener('click', function() {
-    //     popup.style.transform = 'translateY(0)'
-    //     selectedImage.src = kunstImg;
-    // })
-  
-   
+// for reloading the browser >> //     e.preventDefault();
+
+
 
 
 
