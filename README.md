@@ -10,26 +10,27 @@ The data is retrieved from Rijksdata by the Rijksmuseum;https://data.rijksmuseum
 The API gives acces to the collection with information about each object up to a total of 10,000. 
 
 # WireFlow
+![image](https://user-images.githubusercontent.com/97689634/157854336-597c5dca-b040-4230-a40e-32f6b4ebda92.png)
 
 # Activity diagram
 
 # To do list
-- [] Get data from API
-- [] Render data in HTML
+- [x] Get data from API
+- [x] Render data in HTML
 - [] Render the next page with more data from API
 - [] Loading, Error and Empty states 
 - [] Modules
-- [] Working searchbar
-- [] Filter on name
+- [x] Working searchbar
+- [x] Filter on name
 - [] Filter on year
 - [] Filter on title
 - [] Detail page
-- [] Styling page
+- [x] Styling page
 - [] Good looking page
 - [] Documentation > Progress pages in Wiki
 - [] How to install this project?
 - [] Activity diagram
-- [] WireFlow
+- [x] WireFlow
 - [] License
 
 # 💡Features
