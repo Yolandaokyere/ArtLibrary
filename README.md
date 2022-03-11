@@ -13,6 +13,7 @@ The API gives acces to the collection with information about each object up to a
 ![image](https://user-images.githubusercontent.com/97689634/157854336-597c5dca-b040-4230-a40e-32f6b4ebda92.png)
 
 # Activity diagram
+<img width="1341" alt="activity diagram" src="https://user-images.githubusercontent.com/97689634/157856219-378c1cca-6889-423a-bc69-c5cbd4273917.png">
 
 # To do list
 - [x] Get data from API
