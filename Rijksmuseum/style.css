@@ -25,6 +25,28 @@
 body {
     background-image: url(images/kiwihug-y_2GC4EhOP4-unsplash.jpg);
 }
+/* loading styling for the user */
+ .loading {
+     width: 5em;
+     height: 5em;
+     position: absolute;
+     left:calc(50% - 2.5em);
+     top:50%;
+        border: .2em solid rgb(228, 143, 157);
+        border-left-color: currentcolor;
+        border-right-color: currentcolor;
+        border-radius: 50%;
+        animation: 1s loader linear infinite;
+    }
+    
+    @keyframes loader {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
 
 h1 {
     margin: 0 0 -6px;

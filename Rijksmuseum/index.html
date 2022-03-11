@@ -11,18 +11,21 @@
     <header>
       <article>
            <h1>Search your favourite ART</h1>
-      <article id="searchBar">
-        <form>
-            <input name="search-field" type="search" placeholder="  search art" id="searchField">
+      <!-- <article id="searchBar"> -->
+        <form id="searchField">
+            <input name="search-field" type="search" placeholder="  search art" >
             <input name="search-button" type="submit" value="search">
-        </form>  
+        </form> 
     </header>
-    <main>
-    </main>
-          <div class="container">
-                  <!-- <div class="gallery"><gallery src="images/yan-ots-UuBR5kbvt4Y-unsplash.jpg"></gallery></div>    -->
-          </div>
-               <ol></ol>
+    <div class="profile-container">
+      <div class="kunstImg loading"></div> <!-- will wrap an image tag -->
+      <div class="titleShort loading"></div> <!-- h2 object name -->
+      <div class="kunstTitel loading"></div> <!-- =profile info: title art - year - artist -->
+    </div> 
+    <div class="overlay"> <!-- if principalOrFirstMaker doens't exist -->
+        User doens't exist
+    </div>
+            <ol></ol>
             </div>
     </div>
     <script src="script.js"></script>
