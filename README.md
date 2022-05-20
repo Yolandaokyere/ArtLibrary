@@ -15,6 +15,34 @@ The API gives acces to the collection with information about each object up to a
 # Activity diagram
 <img width="1341" alt="activity diagram" src="https://user-images.githubusercontent.com/97689634/157856219-378c1cca-6889-423a-bc69-c5cbd4273917.png">
 
+# Fetch & render data
+```
+fetch (endpoint)
+.then(function(response){
+    return response.json()
+})
+
+// Function logging the response of requested data 
+.then(function(Data) {
+    theData = Data;
+    console.log(Data);
+
+   
+// Function rendering objects in HTML (displaying data on screen)
+    for (let i = 0; i <Data.artObjects.length; i++) {
+        const  kunstImg = Data.artObjects[i].webImage.url.slice(0, -3)+"=s1000"
+        const  kunstTitel = Data.artObjects[i].longTitle
+        const  titleShort = Data.artObjects[i].title
+        document.querySelector('ol').insertAdjacentHTML(`beforeend` ,`<li>
+            <h3 class="titleClass">${kunstTitel}</h3>
+            <h2 class="titleShort">${titleShort}</h2>
+            <img src="${kunstImg}">
+            </li>`
+        )  
+        console.log(Data.artObjects[i]);              
+    }                
+})
+```
 # To do list
 - [x] Get data from API
 - [x] Render data in HTML
